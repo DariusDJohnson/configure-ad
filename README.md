@@ -25,7 +25,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Setup Client-1 in Azure
 - Install Active Directory on Domain Controller via Remote desktop
 - Create a Domain Admin user within the domain
-- Join Client-1 to your domain 
+- Join Client-1 to your domain
+- Setup Remote Desktop for non-administrative users on Client-1
+- Create a bunch of additional users and attempt to log into client-1 with one of the users
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
@@ -193,5 +195,33 @@ Create a new OU named “_ADMINS by right-clicking your domain name -> New -> Or
 </p>
 <p>
 16.) Login to the Domain Controller and verify Client-1 shows up in ADUC and create a new OU named “_CLIENTS” and drag Client-1 into there
+</p>
+<br />
+
+<p>
+  
+![image](https://github.com/user-attachments/assets/0acb4e35-4a7e-4554-9fa9-84bf256673fb) ![image](https://github.com/user-attachments/assets/13ed3102-1bc6-4a63-8174-e8d731d2ed10) ![image](https://github.com/user-attachments/assets/f0f4f1bd-4ef9-46f4-b77a-3077caafcefd) ![image](https://github.com/user-attachments/assets/df3744fc-59e5-4f46-ac36-ecd0f0e0228a)
+
+
+
+
+</p>
+<p>
+17.) Log into Client-1 as mydomain.com\*****_admin -> Open system properties -> Click “Remote Desktop” ->Allow “domain users” access to remote desktop. You can now log into Client-1 as a normal, non-administrative user now
+
+<br />
+
+<p>
+  
+![image](https://github.com/user-attachments/assets/6984a883-8d5e-4042-86ce-de1288fcce0d) ![image](https://github.com/user-attachments/assets/526df67e-b457-4cb6-b5f3-b41706d7a907)
+ ![image](https://github.com/user-attachments/assets/46323666-bc4e-4791-99e7-198c4c48c6f7) ![image](https://github.com/user-attachments/assets/08542c1d-b81c-491b-a758-8feaf6dadf05)
+
+
+
+
+</p>
+<p>
+18.) Login to DC-1 as *****_admin -> Open PowerShell_ise as an administrator -> Create a script for creating users who's information will be put into the _EMPLOYEES OU -> Run the script and observe the accounts being created -> When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
+
 </p>
 <br />
